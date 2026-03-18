@@ -1299,19 +1299,63 @@ body.is-enhanced .reveal.is-visible {
     --content-width: min(100vw - 1rem, 100%);
   }
 
+  .site-header,
+  main,
+  .site-footer {
+    width: calc(100% - 1rem);
+  }
+
   .site-header {
     top: 0.55rem;
     padding: 0.8rem 0.95rem;
     border-radius: 28px;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
+  }
+
+  .brand {
+    max-width: calc(100% - 6.3rem);
+  }
+
+  .brand-text span {
+    display: none;
+  }
+
+  .brand-text strong {
+    white-space: nowrap;
   }
 
   .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-left: auto;
+    margin-left: 0;
+    width: 2.9rem;
+    height: 2.9rem;
+    padding: 0;
+    font-size: 0;
+    position: relative;
+  }
+
+  .menu-toggle::before,
+  .menu-toggle::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 1rem;
+    height: 2px;
+    border-radius: 999px;
+    background: currentColor;
+    transform: translateX(-50%);
+  }
+
+  .menu-toggle::before {
+    top: 1.02rem;
+    box-shadow: 0 0.34rem 0 currentColor;
+  }
+
+  .menu-toggle::after {
+    top: 1.7rem;
   }
 
   .site-nav {
@@ -1332,19 +1376,22 @@ body.is-enhanced .reveal.is-visible {
 
   .hero-visual,
   .hero--timer .hero-visual {
-    min-height: 27rem;
+    min-height: 21rem;
   }
 
   .hero-emblem {
-    inset: 18% 14% 32%;
+    inset: 18% 16% 22%;
   }
 
   .hero-emblem__logo {
-    width: min(14rem, 60%);
+    width: min(12rem, 52%);
   }
 
   .hero-step-list,
-  .hero-step-list--tight,
+  .hero-step-list--tight {
+    display: none;
+  }
+
   .phrase-grid,
   .scenario-grid,
   .step-grid,
@@ -1381,6 +1428,8 @@ body.is-enhanced .reveal.is-visible {
 
   .brand {
     gap: 0.65rem;
+    flex: 1 1 auto;
+    max-width: calc(100% - 6.2rem);
   }
 
   .brand-logo {
@@ -1396,8 +1445,17 @@ body.is-enhanced .reveal.is-visible {
     font-size: 0.8rem;
   }
 
+  .menu-toggle {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
   h1 {
-    font-size: clamp(2.45rem, 16vw, 4rem);
+    font-size: clamp(1.95rem, 11vw, 3rem);
+  }
+
+  .hero-copy h1 {
+    max-width: 8ch;
   }
 
   h2 {
@@ -1412,26 +1470,29 @@ body.is-enhanced .reveal.is-visible {
 
   .hero-visual,
   .hero--timer .hero-visual {
-    min-height: 24rem;
+    min-height: 16rem;
     border-radius: 2rem;
   }
 
   .hero-visual-card {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    right: 1rem;
-    max-width: none;
-    padding: 0.9rem;
+    display: none;
   }
 
   .hero-emblem {
-    inset: 22% 10% 36%;
+    inset: 12% 12%;
   }
 
   .hero-step-pill {
     min-height: 2.75rem;
     font-size: 0.82rem;
+  }
+
+  .hero-halo--outer {
+    inset: 10% 10% 10%;
+  }
+
+  .hero-halo--inner {
+    inset: 24% 24% 24%;
   }
 
   .phrase-display blockquote {
