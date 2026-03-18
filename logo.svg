@@ -1,0 +1,58 @@
+<svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGlow" x1="32" y1="28" x2="188" y2="196" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF6E4"/>
+      <stop offset="0.48" stop-color="#FFE1AB"/>
+      <stop offset="1" stop-color="#F2B775"/>
+    </linearGradient>
+    <linearGradient id="tealGold" x1="58" y1="34" x2="172" y2="186" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F5E63"/>
+      <stop offset="1" stop-color="#F19B5D"/>
+    </linearGradient>
+    <linearGradient id="petalWarm" x1="110" y1="38" x2="110" y2="95" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFDDA0"/>
+      <stop offset="1" stop-color="#E78361"/>
+    </linearGradient>
+    <linearGradient id="petalCool" x1="110" y1="38" x2="110" y2="95" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#9FD7CD"/>
+      <stop offset="1" stop-color="#2C767A"/>
+    </linearGradient>
+    <radialGradient id="coreGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(110 110) rotate(90) scale(54)">
+      <stop stop-color="#FFF9EF"/>
+      <stop offset="0.68" stop-color="#FFD89A"/>
+      <stop offset="1" stop-color="#F0AB69"/>
+    </radialGradient>
+    <filter id="softShadow" x="8" y="10" width="204" height="204" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="12"/>
+      <feGaussianBlur stdDeviation="14"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.154 0 0 0 0 0.191 0 0 0 0 0.204 0 0 0 0.16 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#softShadow)">
+    <circle cx="110" cy="110" r="82" fill="url(#bgGlow)"/>
+    <circle cx="110" cy="110" r="76" stroke="url(#tealGold)" stroke-opacity="0.32" stroke-width="2"/>
+    <circle cx="110" cy="110" r="56" stroke="url(#tealGold)" stroke-opacity="0.26" stroke-width="1.5" stroke-dasharray="3 8"/>
+
+    <g opacity="0.96">
+      <path d="M110 38C121.4 53.2 126.1 65.9 110 84C93.9 65.9 98.6 53.2 110 38Z" fill="url(#petalWarm)"/>
+      <path d="M110 182C98.6 166.8 93.9 154.1 110 136C126.1 154.1 121.4 166.8 110 182Z" fill="url(#petalCool)"/>
+      <path d="M182 110C166.8 121.4 154.1 126.1 136 110C154.1 93.9 166.8 98.6 182 110Z" fill="url(#petalWarm)"/>
+      <path d="M38 110C53.2 98.6 65.9 93.9 84 110C65.9 126.1 53.2 121.4 38 110Z" fill="url(#petalCool)"/>
+      <path d="M158.2 61.8C156.8 80.7 151.4 93.1 127.4 93.4C127.5 69.4 139.5 63.4 158.2 61.8Z" fill="url(#petalWarm)"/>
+      <path d="M61.8 158.2C63.2 139.3 68.6 126.9 92.6 126.6C92.5 150.6 80.5 156.6 61.8 158.2Z" fill="url(#petalWarm)"/>
+      <path d="M158.2 158.2C139.3 156.8 126.9 151.4 126.6 127.4C150.6 127.5 156.6 139.5 158.2 158.2Z" fill="url(#petalCool)"/>
+      <path d="M61.8 61.8C80.7 63.2 93.1 68.6 93.4 92.6C69.4 92.5 63.4 80.5 61.8 61.8Z" fill="url(#petalCool)"/>
+    </g>
+
+    <circle cx="110" cy="110" r="36" fill="url(#coreGlow)"/>
+    <path d="M110 81C118.8 91 124 98.9 124 109.1C124 122.4 113.8 132 110 134.8C106.2 132 96 122.4 96 109.1C96 98.9 101.2 91 110 81Z" fill="#FFFDF7" fill-opacity="0.92"/>
+    <path d="M93 120.5C98.8 130.2 104.7 135.6 110 138.8C115.3 135.6 121.2 130.2 127 120.5" stroke="#0F5E63" stroke-opacity="0.82" stroke-width="4.4" stroke-linecap="round"/>
+    <circle cx="110" cy="110" r="8.5" fill="#0F5E63"/>
+    <circle cx="110" cy="110" r="5.5" fill="#FFF8EC"/>
+  </g>
+</svg>

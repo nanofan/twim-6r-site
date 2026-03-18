@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TWIM Timer | 6R Circuit</title>
+    <meta
+      name="description"
+      content="A dedicated 6R timer with a start-first flow, clean pacing controls, and soft bell cues."
+    >
+    <meta name="theme-color" content="#0f2328">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="page-timer">
+    <div class="site-backdrop" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="Back to TWIM home">
+        <img class="brand-logo" src="logo.svg" alt="TWIM lotus logo">
+        <span class="brand-text">
+          <strong>TWIM Timer</strong>
+          <span>Continuous 6R Circuit</span>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        Menu
+      </button>
+      <nav class="site-nav" id="site-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#science">Science</a>
+        <a href="index.html#relax-practice">Relax</a>
+        <a href="#timer">Timer</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero hero--timer reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Dedicated Timer</p>
+          <h1>Let the 6Rs carry the rhythm.</h1>
+          <p class="hero-lede">
+            Start when ready. The ring stays still until you begin, then the dot and countdown move together while a
+            soft bell marks each step change.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#timer">Start a session</a>
+            <a class="button button-ghost" href="index.html#relax-practice">Review Relax</a>
+          </div>
+        </div>
+
+        <div class="hero-visual hero-visual--timer" aria-hidden="true">
+          <div class="hero-aura hero-aura--gold"></div>
+          <div class="hero-aura hero-aura--teal"></div>
+          <div class="hero-halo hero-halo--outer"></div>
+          <div class="hero-halo hero-halo--inner"></div>
+          <div class="hero-emblem">
+            <img class="hero-emblem__logo" src="logo.svg" alt="">
+          </div>
+          <div class="hero-visual-card hero-visual-card--top">
+            <span class="hero-visual-card__label">Bell-guided flow</span>
+            <strong>One clean handoff every step.</strong>
+          </div>
+          <div class="hero-step-list hero-step-list--tight">
+            <div class="hero-step-pill">Recognize</div>
+            <div class="hero-step-pill">Release</div>
+            <div class="hero-step-pill">Relax</div>
+            <div class="hero-step-pill">Re-Smile</div>
+            <div class="hero-step-pill">Return</div>
+            <div class="hero-step-pill">Repeat</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section reveal" id="timer">
+        <div class="section-heading">
+          <p class="eyebrow">Continuous Circuit</p>
+          <h2>Six steps, one uninterrupted loop.</h2>
+          <p>
+            The motion only runs while the session is active. Choose the pace, start the loop, and let the bell mark
+            each handoff.
+          </p>
+        </div>
+
+        <div class="timer-layout">
+          <article class="panel timer-stage-panel">
+            <div class="timer-shell">
+              <div class="timer-glow" id="timerGlow"></div>
+              <div class="timer-ring" id="timerRing">
+                <div class="timer-dot" id="timerDot"></div>
+                <div class="timer-center">
+                  <span class="timer-center__label">Current step</span>
+                  <h3 id="timerCurrentStep">Recognize</h3>
+                  <p id="timerCurrentCue">Notice the exact moment attention drifts away.</p>
+                  <div class="timer-readout">
+                    <strong id="timerStepSeconds">10</strong>
+                  </div>
+                  <div class="timer-state-pill" id="timerStatePill">Ready</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="timer-controls timer-controls--stacked">
+              <div class="pace-grid" role="tablist" aria-label="Timer pace">
+                <button class="pace-button is-active" type="button" data-duration="60" aria-pressed="true">1 min</button>
+                <button class="pace-button" type="button" data-duration="120" aria-pressed="false">2 min</button>
+                <button class="pace-button" type="button" data-duration="180" aria-pressed="false">3 min</button>
+              </div>
+              <div class="timer-button-row">
+                <button class="button button-primary button-small" id="timerToggle" type="button">Start</button>
+                <button class="button button-ghost button-small" id="timerReset" type="button">Reset</button>
+                <button class="button button-ghost button-small" id="bellToggle" type="button" aria-pressed="true">Bell On</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel timer-steps-panel">
+            <div class="panel-heading">
+              <h3>What the timer is teaching</h3>
+              <p>It keeps the method moving so no single step turns into a stall.</p>
+            </div>
+            <ul class="timer-step-list" id="timerStepList">
+              <li class="timer-step-item is-active" data-timer-step="0">
+                <strong>Recognize</strong>
+                <p>See the mind leave the object.</p>
+              </li>
+              <li class="timer-step-item" data-timer-step="1">
+                <strong>Release</strong>
+                <p>Stop feeding the distraction.</p>
+              </li>
+              <li class="timer-step-item" data-timer-step="2">
+                <strong>Relax</strong>
+                <p>Unclench the body around the pull.</p>
+              </li>
+              <li class="timer-step-item" data-timer-step="3">
+                <strong>Re-Smile</strong>
+                <p>Let friendliness brighten again.</p>
+              </li>
+              <li class="timer-step-item" data-timer-step="4">
+                <strong>Return</strong>
+                <p>Come back to metta.</p>
+              </li>
+              <li class="timer-step-item" data-timer-step="5">
+                <strong>Repeat</strong>
+                <p>Use the next wandering moment as the next rep.</p>
+              </li>
+            </ul>
+            <div class="timer-loop-note" id="timerLoopNote">One minute circuit. 10 seconds per step.</div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Dedicated 6R timer page for TWIM practice.</p>
+      <p class="site-footer__meta">TWIM timer | <span id="year"></span></p>
+    </footer>
+
+    <script src="timer.js"></script>
+  </body>
+</html>
