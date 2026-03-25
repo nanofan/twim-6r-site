@@ -80,9 +80,13 @@
       <section class="section reveal" id="timer">
         <div class="section-heading">
           <p class="eyebrow">Continuous Circuit</p>
-          <h2>Six steps, one uninterrupted loop.</h2>
+          <h2>Pick a per-step interval and let the 6Rs slow down enough to study.</h2>
           <p>
-            The motion only runs while the session is active. Choose the pace, start the loop, and let the bell mark
+            Choose 3, 10, or 20 seconds for each step. The motion only runs while the session is active, and the bell
+            marks each handoff.
+          </p>
+          <p class="timer-disclaimer">
+            In daily life, this process should be much faster. This timer slows it down only to demonstrate the feel of
             each handoff.
           </p>
         </div>
@@ -106,10 +110,11 @@
             </div>
 
             <div class="timer-controls timer-controls--stacked">
+              <p class="timer-controls__label">Interval per step</p>
               <div class="pace-grid" role="tablist" aria-label="Timer pace">
-                <button class="pace-button is-active" type="button" data-duration="60" aria-pressed="true">1 min</button>
-                <button class="pace-button" type="button" data-duration="120" aria-pressed="false">2 min</button>
-                <button class="pace-button" type="button" data-duration="180" aria-pressed="false">3 min</button>
+                <button class="pace-button" type="button" data-duration="3" aria-pressed="false">3 sec</button>
+                <button class="pace-button is-active" type="button" data-duration="10" aria-pressed="true">10 sec</button>
+                <button class="pace-button" type="button" data-duration="20" aria-pressed="false">20 sec</button>
               </div>
               <div class="timer-button-row">
                 <button class="button button-primary button-small" id="timerToggle" type="button">Start</button>

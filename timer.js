@@ -83,7 +83,7 @@ const timerStatePill = document.getElementById("timerStatePill");
 const timerStepItems = [...document.querySelectorAll(".timer-step-item")];
 
 const timerState = {
-  duration: 60,
+  duration: 10,
   running: false,
   elapsedMs: 0,
   startStamp: 0,
@@ -94,24 +94,24 @@ const timerState = {
 };
 
 function getTimerLabel(duration) {
-  if (duration === 60) {
-    return "One minute circuit";
+  if (duration === 3) {
+    return "3-second steps";
   }
-  if (duration === 120) {
-    return "Two minute circuit";
+  if (duration === 10) {
+    return "10-second steps";
   }
-  if (duration === 180) {
-    return "Three minute circuit";
+  if (duration === 20) {
+    return "20-second steps";
   }
-  return `${duration} second circuit`;
+  return `${duration}-second steps`;
 }
 
 function getCycleMs() {
-  return timerState.duration * 1000;
+  return timerState.duration * timerSteps.length * 1000;
 }
 
 function getStepMs() {
-  return getCycleMs() / timerSteps.length;
+  return timerState.duration * 1000;
 }
 
 function getNormalizedElapsed(elapsedMs) {
@@ -216,6 +216,7 @@ function renderTimer() {
   const remaining = Math.max(1, Math.ceil((stepMs - withinStep) / 1000));
   const rotation = (normalized / cycleMs) * 360;
   const activeStep = timerSteps[stepIndex];
+  const fullCircuitSeconds = Math.round(cycleMs / 1000);
 
   timerState.activeStep = stepIndex;
 
@@ -226,7 +227,7 @@ function renderTimer() {
   timerCurrentStep.textContent = activeStep.name;
   timerCurrentCue.textContent = activeStep.cue;
   timerStepSeconds.textContent = String(remaining);
-  timerLoopNote.textContent = `${getTimerLabel(timerState.duration)}. ${Math.round(stepMs / 1000)} seconds per step.`;
+  timerLoopNote.textContent = `${getTimerLabel(timerState.duration)}. ${fullCircuitSeconds}-second full circuit.`;
 
   if (timerStatePill) {
     if (timerState.running) {

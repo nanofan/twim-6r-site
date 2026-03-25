@@ -721,6 +721,7 @@ body.page-timer .start-item {
 body.page-timer .pace-button {
   background: rgba(255, 255, 255, 0.08);
   color: var(--cream);
+  text-align: center;
 }
 
 .phrase-button:hover,
@@ -1158,6 +1159,24 @@ body.page-timer .meter__track {
   text-transform: uppercase;
 }
 
+.timer-disclaimer {
+  margin-top: 1rem;
+  padding: 1rem 1.05rem;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: rgba(255, 247, 238, 0.8);
+}
+
+.timer-controls__label {
+  margin: 0;
+  color: rgba(255, 219, 148, 0.78);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .timer-controls--stacked {
   flex-direction: column;
   align-items: stretch;
@@ -1411,6 +1430,38 @@ body.is-enhanced .reveal.is-visible {
     flex: 1 1 10rem;
   }
 
+  body.page-timer .timer-controls .pace-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  body.page-timer .timer-button-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+  }
+
+  body.page-timer .timer-button-row .button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  body.page-timer #bellToggle {
+    grid-column: 1 / -1;
+  }
+
+  body.page-timer .timer-stage-panel,
+  body.page-timer .timer-steps-panel {
+    padding: 1.2rem;
+  }
+
+  body.page-timer .timer-shell {
+    min-height: 25rem;
+  }
+
+  body.page-timer .timer-step-item.is-active {
+    transform: none;
+  }
+
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
@@ -1504,15 +1555,42 @@ body.is-enhanced .reveal.is-visible {
   }
 
   .timer-ring {
-    width: min(100%, 20rem);
+    width: min(100%, 16.5rem);
   }
 
   .timer-center {
-    padding: 1.4rem 1.8rem;
+    padding: 1.1rem 1.2rem;
+    gap: 0.6rem;
+  }
+
+  body.page-timer .timer-center h3 {
+    font-size: clamp(1.7rem, 8vw, 2.35rem);
+  }
+
+  body.page-timer .timer-center p {
+    max-width: 13rem;
+    font-size: 0.92rem;
+  }
+
+  body.page-timer .timer-controls .pace-grid {
+    gap: 0.55rem;
+  }
+
+  body.page-timer .pace-button {
+    padding: 0.82rem 0.45rem;
+    font-size: 0.86rem;
+  }
+
+  body.page-timer .timer-button-row {
+    grid-template-columns: 1fr;
+  }
+
+  body.page-timer #bellToggle {
+    grid-column: auto;
   }
 
   .timer-readout strong {
-    font-size: 1.6rem;
+    font-size: 1.45rem;
   }
 }
 
