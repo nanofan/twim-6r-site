@@ -1573,12 +1573,13 @@ body.is-enhanced .reveal.is-visible {
   }
 
   body.page-timer .timer-controls .pace-grid {
+    grid-template-columns: 1fr;
     gap: 0.55rem;
   }
 
   body.page-timer .pace-button {
-    padding: 0.82rem 0.45rem;
-    font-size: 0.86rem;
+    padding: 0.82rem 0.8rem;
+    font-size: 0.92rem;
   }
 
   body.page-timer .timer-button-row {
