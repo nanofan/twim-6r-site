@@ -1585,8 +1585,21 @@ body.is-enhanced .reveal.is-visible {
     font-size: clamp(1.85rem, 11vw, 2.45rem);
   }
 
+  body.page-timer .timer-stage-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+  }
+
+  body.page-timer .timer-controls--stacked {
+    order: 1;
+    gap: 0.7rem;
+  }
+
   .timer-shell {
+    order: 2;
     min-height: 20.5rem;
+    margin-top: 0;
   }
 
   .timer-ring {
