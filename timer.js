@@ -70,6 +70,7 @@ const timerSteps = [
 ];
 
 const paceButtons = [...document.querySelectorAll(".pace-button")];
+const timerIntervalSelect = document.getElementById("timerIntervalSelect");
 const bellToggle = document.getElementById("bellToggle");
 const timerRing = document.getElementById("timerRing");
 const timerGlow = document.getElementById("timerGlow");
@@ -185,6 +186,10 @@ function syncTimerButtons() {
     paceButtons,
     paceButtons.findIndex((button) => Number(button.dataset.duration) === timerState.duration)
   );
+
+  if (timerIntervalSelect) {
+    timerIntervalSelect.value = String(timerState.duration);
+  }
 
   if (bellToggle) {
     bellToggle.textContent = timerState.bellEnabled ? "Bell On" : "Bell Off";
@@ -349,6 +354,18 @@ paceButtons.forEach((button) => {
     }
   });
 });
+
+if (timerIntervalSelect) {
+  timerIntervalSelect.addEventListener("change", () => {
+    const wasRunning = timerState.running;
+    timerState.duration = Number(timerIntervalSelect.value);
+    resetTimer();
+
+    if (wasRunning) {
+      startTimer();
+    }
+  });
+}
 
 renderTimer();
 

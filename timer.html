@@ -116,6 +116,14 @@
                 <button class="pace-button is-active" type="button" data-duration="10" aria-pressed="true">10 sec</button>
                 <button class="pace-button" type="button" data-duration="20" aria-pressed="false">20 sec</button>
               </div>
+              <label class="timer-interval-select-wrap" for="timerIntervalSelect">
+                <span class="visually-hidden">Interval per step</span>
+                <select class="timer-interval-select" id="timerIntervalSelect">
+                  <option value="3">3 seconds per step</option>
+                  <option value="10" selected>10 seconds per step</option>
+                  <option value="20">20 seconds per step</option>
+                </select>
+              </label>
               <div class="timer-button-row">
                 <button class="button button-primary button-small" id="timerToggle" type="button">Start</button>
                 <button class="button button-ghost button-small" id="timerReset" type="button">Reset</button>
