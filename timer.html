@@ -93,22 +93,6 @@
 
         <div class="timer-layout">
           <article class="panel timer-stage-panel">
-            <div class="timer-shell">
-              <div class="timer-glow" id="timerGlow"></div>
-              <div class="timer-ring" id="timerRing">
-                <div class="timer-dot" id="timerDot"></div>
-                <div class="timer-center">
-                  <span class="timer-center__label">Current step</span>
-                  <h3 id="timerCurrentStep">Recognize</h3>
-                  <p id="timerCurrentCue">Notice the exact moment attention drifts away.</p>
-                  <div class="timer-readout">
-                    <strong id="timerStepSeconds">10</strong>
-                  </div>
-                  <div class="timer-state-pill" id="timerStatePill">Ready</div>
-                </div>
-              </div>
-            </div>
-
             <div class="timer-controls timer-controls--stacked">
               <p class="timer-controls__label">Interval per step</p>
               <div class="pace-grid" role="tablist" aria-label="Timer pace">
@@ -128,6 +112,22 @@
                 <button class="button button-primary button-small" id="timerToggle" type="button">Start</button>
                 <button class="button button-ghost button-small" id="timerReset" type="button">Reset</button>
                 <button class="button button-ghost button-small" id="bellToggle" type="button" aria-pressed="true">Bell On</button>
+              </div>
+            </div>
+
+            <div class="timer-shell">
+              <div class="timer-glow" id="timerGlow"></div>
+              <div class="timer-ring" id="timerRing">
+                <div class="timer-dot" id="timerDot"></div>
+                <div class="timer-center">
+                  <span class="timer-center__label">Current step</span>
+                  <h3 id="timerCurrentStep">Recognize</h3>
+                  <p id="timerCurrentCue">Notice the exact moment attention drifts away.</p>
+                  <div class="timer-readout">
+                    <strong id="timerStepSeconds">10</strong>
+                  </div>
+                  <div class="timer-state-pill" id="timerStatePill">Ready</div>
+                </div>
               </div>
             </div>
           </article>

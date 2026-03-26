@@ -1032,6 +1032,9 @@ body.page-timer .meter__track {
 }
 
 .timer-stage-panel {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
   background:
     radial-gradient(circle at 24% 22%, rgba(255, 216, 142, 0.16), transparent 26%),
     linear-gradient(180deg, rgba(12, 31, 37, 0.96), rgba(20, 47, 54, 0.94));
@@ -1467,12 +1470,15 @@ body.is-enhanced .reveal.is-visible {
 
   body.page-timer .timer-interval-select-wrap {
     display: block;
+    width: 100%;
   }
 
   body.page-timer .timer-button-row {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
+    width: 100%;
+    margin: 0;
   }
 
   body.page-timer .timer-button-row .button {
@@ -1480,8 +1486,18 @@ body.is-enhanced .reveal.is-visible {
     min-width: 0;
   }
 
-  body.page-timer #bellToggle {
-    grid-column: 1 / -1;
+  body.page-timer .timer-stage-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.1rem;
+  }
+
+  body.page-timer .timer-controls--stacked {
+    width: 100%;
+    gap: 0.85rem;
+    position: relative;
+    z-index: 2;
   }
 
   body.page-timer .timer-stage-panel,
@@ -1490,7 +1506,8 @@ body.is-enhanced .reveal.is-visible {
   }
 
   body.page-timer .timer-shell {
-    min-height: 25rem;
+    min-height: 21.5rem;
+    padding-top: 0.2rem;
   }
 
   body.page-timer .timer-step-item.is-active {
@@ -1585,30 +1602,18 @@ body.is-enhanced .reveal.is-visible {
     font-size: clamp(1.85rem, 11vw, 2.45rem);
   }
 
-  body.page-timer .timer-stage-panel {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-  }
-
-  body.page-timer .timer-controls--stacked {
-    order: 1;
-    gap: 0.7rem;
-  }
-
   .timer-shell {
-    order: 2;
-    min-height: 20.5rem;
+    min-height: 18.6rem;
     margin-top: 0;
   }
 
   .timer-ring {
-    width: min(100%, 14.2rem);
+    width: min(100%, 13.1rem);
   }
 
   .timer-center {
-    padding: 0.95rem 1rem;
-    gap: 0.48rem;
+    padding: 0.85rem 0.9rem;
+    gap: 0.42rem;
   }
 
   body.page-timer .timer-center h3 {
@@ -1616,38 +1621,43 @@ body.is-enhanced .reveal.is-visible {
   }
 
   body.page-timer .timer-center p {
-    max-width: 11.2rem;
-    font-size: 0.8rem;
-    line-height: 1.3;
+    max-width: 10.3rem;
+    font-size: 0.74rem;
+    line-height: 1.24;
   }
 
   body.page-timer .timer-controls .pace-grid {
     display: none;
   }
 
-  body.page-timer .timer-button-row {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.5rem;
+  body.page-timer .timer-controls__label {
+    font-size: 0.72rem;
   }
 
-  body.page-timer #bellToggle {
-    grid-column: auto;
+  body.page-timer .timer-interval-select {
+    padding: 0.82rem 2.6rem 0.82rem 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  body.page-timer .timer-button-row {
+    grid-template-columns: 1fr;
+    gap: 0.4rem;
   }
 
   body.page-timer .timer-button-row .button {
-    padding: 0.74rem 0.3rem;
-    font-size: 0.78rem;
+    padding: 0.7rem 0.85rem;
+    font-size: 0.8rem;
     letter-spacing: 0;
   }
 
   .timer-readout strong {
-    font-size: 1.28rem;
+    font-size: 1.2rem;
   }
 
   body.page-timer .timer-state-pill {
-    min-width: 4.9rem;
-    padding: 0.42rem 0.7rem;
-    font-size: 0.72rem;
+    min-width: 4.6rem;
+    padding: 0.38rem 0.62rem;
+    font-size: 0.68rem;
   }
 
   body.page-timer .timer-stage-panel,
@@ -1657,6 +1667,24 @@ body.is-enhanced .reveal.is-visible {
 
   body.page-timer .timer-layout {
     gap: 1rem;
+  }
+
+  body.page-timer .timer-stage-panel {
+    gap: 0.95rem;
+  }
+}
+
+@media (max-width: 360px) {
+  body.page-timer .timer-shell {
+    min-height: 17.8rem;
+  }
+
+  body.page-timer .timer-ring {
+    width: min(100%, 12.4rem);
+  }
+
+  body.page-timer .timer-center h3 {
+    font-size: clamp(1.28rem, 7vw, 1.8rem);
   }
 }
 
