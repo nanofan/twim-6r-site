@@ -1586,25 +1586,26 @@ body.is-enhanced .reveal.is-visible {
   }
 
   .timer-shell {
-    min-height: 24rem;
+    min-height: 20.5rem;
   }
 
   .timer-ring {
-    width: min(100%, 16.5rem);
+    width: min(100%, 14.2rem);
   }
 
   .timer-center {
-    padding: 1.1rem 1.2rem;
-    gap: 0.6rem;
+    padding: 0.95rem 1rem;
+    gap: 0.48rem;
   }
 
   body.page-timer .timer-center h3 {
-    font-size: clamp(1.7rem, 8vw, 2.35rem);
+    font-size: clamp(1.4rem, 7vw, 1.95rem);
   }
 
   body.page-timer .timer-center p {
-    max-width: 13rem;
-    font-size: 0.92rem;
+    max-width: 11.2rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
   }
 
   body.page-timer .timer-controls .pace-grid {
@@ -1612,15 +1613,37 @@ body.is-enhanced .reveal.is-visible {
   }
 
   body.page-timer .timer-button-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.5rem;
   }
 
   body.page-timer #bellToggle {
     grid-column: auto;
   }
 
+  body.page-timer .timer-button-row .button {
+    padding: 0.74rem 0.3rem;
+    font-size: 0.78rem;
+    letter-spacing: 0;
+  }
+
   .timer-readout strong {
-    font-size: 1.45rem;
+    font-size: 1.28rem;
+  }
+
+  body.page-timer .timer-state-pill {
+    min-width: 4.9rem;
+    padding: 0.42rem 0.7rem;
+    font-size: 0.72rem;
+  }
+
+  body.page-timer .timer-stage-panel,
+  body.page-timer .timer-steps-panel {
+    padding: 1rem;
+  }
+
+  body.page-timer .timer-layout {
+    gap: 1rem;
   }
 }
 
